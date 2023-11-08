@@ -1,0 +1,428 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'arial';
+}
+
+/* Estilização do Header e do menu compactado */
+
+.header-itens {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar{
+    background-color: #00613c;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 10px 0px 10px #00613c;
+    z-index: 99;
+}
+
+.navbar>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo-img{
+    width: 45px;
+}
+
+.logo{
+    color: white;
+    margin-right: 40%;   
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-icon{
+    display: flex;
+    align-items: center;   
+}
+.nav-icon img{
+    width: 30px;
+    cursor: pointer; 
+}
+.nav-icon img:first-child{
+    margin-right: 1rem;
+}
+nav ul li {
+    color: white;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+nav ul li:hover{
+    transform: translateY(-5px);
+    transition: all 0.2;
+    font-weight: bold;
+}
+
+.menu-btn{
+    display: none;
+}
+
+header{
+    background-image: radial-gradient(white, #d4d4d4 );
+}
+
+.header-btn-side{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.header-btn-side-left{
+    height: 100%;
+    flex-basis: 50%;
+}
+
+.header-btn-side-left h2{
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.header-btn-side-left p{
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.header-btn-side-left button{
+    background-color: #870a28;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 3.8rem;
+    border-radius: 9999px;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.header-btn-side-left button:hover{
+    background-color: #57071a;
+
+}
+
+.header-btn-side-right{
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.header-btn-side-right img{
+    width: 115%;
+
+}
+
+/* Responsividade do Header/Aplicação do Menu compactado */
+
+@media (max-width: 800px){
+
+    .logo-img{
+        width: 35px;
+        
+
+    }
+
+    .logo{
+        font-size: 1.2rem;
+        margin-right: 62%;
+    }
+
+    .menu-btn{
+        display: block;
+    }
+
+    .header-btn-side{
+        flex-direction: column;
+        text-align: center;
+        padding-top: 4rem;
+    }
+
+    nav{
+        position: absolute;
+        background-color: #00613c;
+        width: 100%;
+        top: 46px;
+        display: none;
+    }
+
+    .show-menu nav{
+        display: block;   
+    }
+
+    nav ul {
+        flex-direction: column;
+
+    }
+    nav ul li {
+        text-align: center;
+        padding: 0.8rem;
+    }
+}
+
+/* Estilização da apresentação dos Produtos */
+
+main{
+    background-color: #ebebeb;
+}
+
+.grenn-background{
+    background-color: #00613c;
+}
+
+.page-inner-content{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.colunas{
+    display: grid;
+    justify-content:space-evenly;
+    padding: 4rem 1rem;
+}
+
+.colunas-3{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.colunas-3 img{
+    max-width: 100%;
+}
+
+.colunas-4 img{
+    max-width: 100%;
+}
+
+.colunas-4{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.colunas>*{
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.colunas>*:hover{
+    transform: translateY(-5px);
+}
+
+.section-title{
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1.8 rem;
+}
+
+.subtitle{
+    width: 100px;
+    height: 5px;
+    background: #870a28;
+    border-radius: 9999px;
+    margin: 8px auto 0 auto;
+}
+
+.product{
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name{
+    font-weight: 600;
+    margin-top: 0.4rem;
+}
+
+.rate{
+    color: #d4cd13;
+    font-size: 1.3rem; 
+}
+
+.product-price{
+    font-weight: 600;
+
+}
+
+.exclusive-container{
+    color: #fff;
+    flex-direction: row-reverse;
+    padding: 5rem 1rem;
+}
+
+.exclusive-container img {
+    max-width: 500px;
+}
+
+/* Responsividade da aba dos produtos */
+
+@media (max-width:800px){
+    .section-title{
+        font-size: 1rem;
+    }
+
+    .colunas-3{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .colunas-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .exclusive-container{
+        flex-direction: column-reverse;
+    }
+
+    .exclusive-container img{
+        margin-bottom: 4rem;
+    }
+}
+
+/* Estilização da aba de feedback */
+
+.feedbacks{
+    display: flex;
+    padding: 4rem 1rem;
+    justify-content: space-evenly;
+}
+
+.feedback{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 30%;
+    text-align: center;
+    box-shadow: 0 0 15px #afafaf;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.feedback:hover{
+    transform: translate(-5px);
+}
+
+.feedback p{
+    margin:  5px 0;
+}
+
+.feedback p:first-child{
+    font-weight: bold;
+    font-size: 5rem;
+    color: #870a28;
+    margin-top: 3rem;
+    line-height: 2rem;
+}
+.feedback p:last-child{
+    font-weight: bold;
+}
+
+/* Responsividade da aba de Feed back */
+
+@media (max-width: 800px){
+    .feedbacks{
+        flex-direction: column;
+    }
+
+    .feedback{
+        margin-bottom: 1.2rem;
+    }
+}
+
+/* Estilização do Footer */
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    color: #0d0d0d;
+    padding: 4rem 1rem;
+    gap: 2rem;
+}
+
+.download-options>*{
+    margin:  1rem 0;
+}
+
+.download-options>p:first-child{
+    font-weight: bold;
+    color: #fff;
+}
+ 
+.download-options>div{
+    display: flex;
+}
+
+.donwload-options>div img{
+    width: 180px;
+}
+
+.logo-footer{
+    text-align: center;
+}
+
+.logo-f{
+    color: white;
+
+}
+
+.links-footer h3{
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.links-footer ul{
+    list-style: none;
+}
+
+.links-footer ul li{
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.copyright{
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Responsividade do Footer */
+
+@media (max-width: 800px){
+    .footer-content{
+        display: inline;
+        font-size: 0.8rem;
+    }
+
+    .footer-content>div{
+       padding: 1rem; 
+    }
+
+    .donwload-options>div{
+        display: inline;
+    }
+
+    .donwload-options>div img{
+        width: 120px;
+    }
+
+    .copyright{
+        font-size: 0.8rem;
+    }
+}
